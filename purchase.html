@@ -142,8 +142,9 @@
                                     <!--<span class="stock">庫存: 15</span>-->
                                 </div>
                                 <div class="product-actions">
-                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
-                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart" data-id="產品ID">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now" data-id="產品ID">立即購買</button>
                                 </div>
                             </div>
                         </div>
@@ -161,8 +162,9 @@
                                     <!--<span class="stock">庫存: 8</span>-->
                                 </div>
                                 <div class="product-actions">
-                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
-                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart" data-id="產品ID">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now" data-id="產品ID">立即購買</button>
                                 </div>
                             </div>
                         </div>
@@ -180,8 +182,9 @@
                                     <!--<span class="stock">庫存: 32</span>-->
                                 </div>
                                 <div class="product-actions">
-                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
-                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart" data-id="產品ID">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now" data-id="產品ID">立即購買</button>
                                 </div>
                             </div>
                         </div>
@@ -199,8 +202,9 @@
                                     <!--<span class="stock">庫存: 20</span>-->
                                 </div>
                                 <div class="product-actions">
-                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
-                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart" data-id="產品ID">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now" data-id="產品ID">立即購買</button>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +321,82 @@
         });
       }
     }
-  </script>
 
+    document.addEventListener('DOMContentLoaded', function () {
+      // 如果是購買頁面，顯示購物車項目
+      if (window.location.pathname.includes('purchase.html')) {
+          displayCartItems();
+      }
+    });
+
+    // 顯示購物車項目
+    function displayCartItems() {
+        const cartItemsContainer = document.querySelector('.cart-items');
+        if (!cartItemsContainer) return;
+
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = `
+                <div class="cart-empty-message">
+                    <p>您的購物車目前是空的，請添加商品。</p>
+                </div>`;
+            return;
+        }
+
+        let html = `
+            <div class="cart-header">
+                <div class="cart-item-image">圖片</div>
+                <div class="cart-item-details">商品</div>
+                <div class="cart-item-price">單價</div>
+                <div class="cart-item-quantity">數量</div>
+                <div class="cart-item-subtotal">小計</div>
+                <div class="cart-item-action">操作</div>
+            </div>`;
+
+        // 這裡需要實作從產品資料庫獲取商品資訊
+        // 目前使用範例資料
+        cart.forEach(item => {
+            html += `
+                <div class="cart-item" data-id="${item.id}">
+                    <div class="cart-item-image">
+                        <img src="images/${item.id}.jpg" alt="">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>${item.id}</h3>
+                    </div>
+                    <div class="cart-item-price">NT$ 800</div>
+                    <div class="cart-item-quantity">
+                        <input type="number" value="${item.quantity}" min="1">
+                    </div>
+                    <div class="cart-item-subtotal">NT$ ${800 * item.quantity}</div>
+                    <div class="cart-item-action">
+                        <button class="btn btn--outline btn--sm" onclick="removeFromCart('${item.id}')">
+                            刪除
+                        </button>
+                    </div>
+                </div>`;
+        });
+
+        cartItemsContainer.innerHTML = html;
+        updateCartTotal();
+    }
+
+    // 更新購物車總金額
+    function updateCartTotal() {
+        const totalElement = document.querySelector('.total-amount');
+        if (!totalElement) return;
+
+        const total = cart.reduce((sum, item) => sum + (800 * item.quantity), 0);
+        totalElement.textContent = `NT$ ${total}`;
+    }
+
+    // 從購物車移除商品
+    function removeFromCart(productId) {
+        cart = cart.filter(item => item.id !== productId);
+        saveCart();
+        updateCartUI();
+        displayCartItems();
+    }
+  </script>
+<script src="public/js/cart.js"></script>
 </body>
 </html>

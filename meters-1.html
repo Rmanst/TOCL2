@@ -35,11 +35,11 @@
                                 <p class="product-description">精準量測食材重量</p>
                                 <div class="product-price-stock">
                                     <span class="price">NT$ 800</span>
-                                    <!--<span class="stock">庫存: 15</span>-->
                                 </div>
                                 <div class="product-actions">
-                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
-                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart" data-id="TOC-123">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now" data-id="TOC-123">立即購買</button>
                                 </div>
                             </div>
                         </div>
@@ -142,6 +142,6 @@
       }
     }
   </script>
-
+<script src="public/js/cart.js"></script>
 </body>
 </html>
