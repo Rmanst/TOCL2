@@ -2054,3 +2054,15 @@ main {
   margin: 0 8px;
 }
 
+/* 讓 category-card 內 ul 置中但 li 文字靠左 */
+.category-card p {
+  display: flex;
+  justify-content: center;
+}
+
+.category-card ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 auto;
+  padding-left: 1.2em; /* 保持縮排 */
+}
