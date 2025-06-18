@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計量傳感器 - 專業測量解決方案</title>
+    <link rel="stylesheet" href="modified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Homepage / About Section -->
+
+
+        <!-- Product Pages -->
+        
+            <div class="page-header">
+                <div class="container">
+                    <h1>計量表 (Meters)</h1>
+                    <p>從工業級到居家醫療，提供全方位的精準測量解決方案</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="product-categories">
+                    <div class="category-section">
+                        <!--<h2>通用儀器</h2>-->
+                        <div class="product-list">
+                            <div class="product-item">
+                                <i class="fas fa-weight"></i>
+                                <a href="meters-1.html">
+                                    <div class="product-info">
+                                    <h3>秤</h3>
+                                    <p>高精度電子秤，適用於各種稱重需求</p>
+                                </div></a>
+                            </div>
+                            <div class="product-item">
+                                <i class="fas fa-plug"></i>
+                                <div class="product-info">
+                                    <h3>三用電表</h3>
+                                    <p>測量電壓、電流、電阻的多功能儀表</p>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <i class="fas fa-battery-half"></i>
+                                <div class="product-info">
+                                    <h3>電池表</h3>
+                                    <p>精確檢測電池電量和健康狀況</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-section">
+                        <!--<h2>能源計量</h2>-->
+                        <div class="product-list">
+                            <div class="product-item">
+                                <i class="fas fa-bolt"></i>
+                                <div class="product-info">
+                                    <h3>電能表</h3>
+                                    <p>智能電力計量，支持遠程監控</p>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <i class="fas fa-tint"></i>
+                                <div class="product-info">
+                                    <h3>流體表</h3>
+                                    <p>精確測量液體流量，工業級可靠性</p>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <i class="fas fa-wind"></i>
+                                <div class="product-info">
+                                    <h3>流氣表</h3>
+                                    <p>高精度氣體流量測量解決方案</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="category-section">
+                        <!--<h2>醫療健康</h2>-->
+                        <div class="product-list">
+                            <div class="product-item">
+                                <i class="fas fa-thermometer"></i>
+                                <div class="product-info">
+                                    <h3>耳溫槍</h3>
+                                    <p>快速準確的體溫測量設備</p>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <i class="fas fa-heartbeat"></i>
+                                <div class="product-info">
+                                    <h3>血壓計</h3>
+                                    <p>專業級血壓監測設備</p>
+                                </div>
+                            </div>
+                            <div class="product-item">
+                                <i class="fas fa-first-aid"></i>
+                                <div class="product-info">
+                                    <h3>血糖計</h3>
+                                    <p>精確的血糖檢測儀器</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+      
+<div id="footer"></div>
+
+<!-- Header/Footer 載入 -->
+  <script>
+    function loadHTML(id, url, callback) {
+      fetch(url).then(res => res.text()).then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === 'function') callback();
+      });
+    }
+
+    // 載入 header 並執行 main 顯示控制邏輯
+    loadHTML("header", "header.html", initMainControl);
+    loadHTML("footer", "footer.html");
+
+    function initMainControl() {
+      const main = document.getElementById('mainContent');
+      const logo = document.getElementById('logoLink');
+      if (!main) return;
+
+      const isHidden = localStorage.getItem('mainHidden') === 'true';
+      main.style.display = isHidden ? 'none' : 'block';
+
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (main.style.display === 'none') {
+            main.style.display = 'block';
+            localStorage.setItem('mainHidden', 'false');
+          } else {
+            main.style.display = 'none';
+            localStorage.setItem('mainHidden', 'true');
+          }
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計量傳感器 - 專業測量解決方案</title>
+    <link rel="stylesheet" href="modified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+
+    <!-- Main Content -->
+    <main>
+        
+            <div class="page-header">
+                <div class="container">
+                    <h1>聯絡我們</h1>
+                    <p>歡迎聯繫我們的專業團隊，我們將為您提供最佳的技術解決方案</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h2>聯絡資訊</h2>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>公司地址</h4>
+                                <p>中正東路的中正東路走七遍<br>計量大樓</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>電話</h4>
+                                <p>+886-2-1234-8888</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>電子郵件</h4>
+                                <p>raymond.yu@ic-fortune.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>營業時間</h4>
+                                <p>週一至週五 09:00-18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form">
+                        <h2>線上諮詢</h2>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label class="form-label">諮詢類型</label>
+                                <select class="form-control" name="inquiryType" required>
+                                    <option value="">請選擇諮詢類型</option>
+                                    <option value="product">產品詢價</option>
+                                    <option value="technical">技術支援</option>
+                                    <option value="partnership">合作提案</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">姓名</label>
+                                <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">公司/組織</label>
+                                <input type="text" class="form-control" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">電話</label>
+                                <input type="tel" class="form-control" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">電子郵件</label>
+                                <input type="email" class="form-control" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">詢問內容</label>
+                                <textarea class="form-control" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--full-width">送出諮詢</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+      
+<div id="footer"></div>
+
+<!-- Header/Footer 載入 -->
+  <script>
+    function loadHTML(id, url, callback) {
+      fetch(url).then(res => res.text()).then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === 'function') callback();
+      });
+    }
+
+    // 載入 header 並執行 main 顯示控制邏輯
+    loadHTML("header", "header.html", initMainControl);
+    loadHTML("footer", "footer.html");
+
+    function initMainControl() {
+      const main = document.getElementById('mainContent');
+      const logo = document.getElementById('logoLink');
+      if (!main) return;
+
+      const isHidden = localStorage.getItem('mainHidden') === 'true';
+      main.style.display = isHidden ? 'none' : 'block';
+
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (main.style.display === 'none') {
+            main.style.display = 'block';
+            localStorage.setItem('mainHidden', 'false');
+          } else {
+            main.style.display = 'none';
+            localStorage.setItem('mainHidden', 'true');
+          }
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>

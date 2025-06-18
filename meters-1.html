@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計量傳感器 - 專業測量解決方案</title>
+    <link rel="stylesheet" href="modified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="product-categories-selection">
+            <div class="page-header">
+                <div class="container">
+                    <h1>秤</h1>
+                    <p>高精度電子秤，適用於各種稱重需求</p>
+                </div>
+            </div>
+
+        <h2>產品資訊</h2>
+                    <div class="product-grid">
+                        <!-- 產品1 -->
+                        <div class="product-card">
+                            <a href="meters-TOC-123.html">
+                            <div class="product-image">
+                                <img src="images/TOC-123.jpg" alt="廚房料理藍牙電子秤">
+                            </div>
+                            </a>
+                            <div class="product-info">
+                                <h3>TOC-123<br>廚房料理藍牙電子秤</h3>
+                                <p class="product-description">精準量測食材重量</p>
+                                <div class="product-price-stock">
+                                    <span class="price">NT$ 800</span>
+                                    <!--<span class="stock">庫存: 15</span>-->
+                                </div>
+                                <div class="product-actions">
+                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 產品2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/TOC-246.jpg" alt="高精度計重桌秤">
+                            </div>
+                            <div class="product-info">
+                                <h3>TOC-246<br>高精度計重桌秤</h3>
+                                <p class="product-description">高性能A/D轉換器</p>
+                                <div class="product-price-stock">
+                                    <span class="price">NT$ 1,500</span>
+                                    <!--<span class="stock">庫存: 8</span>-->
+                                </div>
+                                <!--<div class="product-actions">
+                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                </div>-->
+                            </div>
+                        </div>
+
+                        <!-- 產品3 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/TOC-378.jpg" alt="多功能藍芽智能體重體脂計">
+                            </div>
+                            <div class="product-info">
+                                <h3>TOC-378<br>多功能藍芽智能體重體脂計</h3>
+                                <p class="product-description">新型ITO鍍膜工藝，解放踩點測脂自由</p>
+                                <!--<div class="product-price-stock">
+                                    <span class="price">NT$ 2,500</span>
+                                    <span class="stock">庫存: 32</span>
+                                </div>-->
+                                <!--<div class="product-actions">
+                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                </div>-->
+                            </div>
+                        </div>
+
+                        <!-- 產品4 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="images/TOC-789.jpg" alt="智能藍芽體重計">
+                            </div>
+                            <div class="product-info">
+                                <h3>TOC-789<br>智能藍芽體重計</h3>
+                                <p class="product-description">藍芽自動傳輸,健康管理更方便</p>
+                                <!--<div class="product-price-stock">
+                                    <span class="price">NT$ 3,200</span>
+                                    <span class="stock">庫存: 20</span>
+                                </div>-->
+                                <!--<div class="product-actions">
+                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    </div>
+  </main>
+
+ <div id="footer"></div>
+
+<!-- Header/Footer 載入 -->
+  <script>
+    function loadHTML(id, url, callback) {
+      fetch(url).then(res => res.text()).then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === 'function') callback();
+      });
+    }
+
+    // 載入 header 並執行 main 顯示控制邏輯
+    loadHTML("header", "header.html", initMainControl);
+    loadHTML("footer", "footer.html");
+
+    function initMainControl() {
+      const main = document.getElementById('mainContent');
+      const logo = document.getElementById('logoLink');
+      if (!main) return;
+
+      const isHidden = localStorage.getItem('mainHidden') === 'true';
+      main.style.display = isHidden ? 'none' : 'block';
+
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (main.style.display === 'none') {
+            main.style.display = 'block';
+            localStorage.setItem('mainHidden', 'false');
+          } else {
+            main.style.display = 'none';
+            localStorage.setItem('mainHidden', 'true');
+          }
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
