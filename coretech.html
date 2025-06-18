@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計量傳感器 - 專業測量解決方案</title>
+    <link rel="stylesheet" href="modified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+<div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+
+            <!-- About Us Brief -->
+            <div class="about-brief">
+                <div class="container">
+                    <div class="about-content">
+                        <h2>技術核心</h2>
+                        <p>智能感知，精準連結未來生活</p>
+                        <p>在APP普及的時代，科技正在悄然改變我們的生活品質。我們致力於開發讓物理能量透過高精</p>
+                        <p>度傳感器與計量芯片即時轉化為可見數據的解決方案。透過APP，使用者得以隨時掌握人與設</p>
+                        <p>備周遭的能量變化，實現更智能、更便捷的生活應用。</p>
+                        <p>我們相信，當計量技術與行動應用深度結合，傳感科技將不再只是產業工具，而是真正走進</p>
+                        <p>每一個人的日常。</p>
+                        <!--<button class="btn btn--outline" onclick="showAboutDetail()">深入了解</button>-->
+                    </div>
+                </div>
+            </div>
+
+    </main>
+
+<div id="footer"></div>
+
+<!-- Header/Footer 載入 -->
+  <script>
+    function loadHTML(id, url, callback) {
+      fetch(url).then(res => res.text()).then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === 'function') callback();
+      });
+    }
+
+    // 載入 header 並執行 main 顯示控制邏輯
+    loadHTML("header", "header.html", initMainControl);
+    loadHTML("footer", "footer.html");
+
+    function initMainControl() {
+      const main = document.getElementById('mainContent');
+      const logo = document.getElementById('logoLink');
+      if (!main) return;
+
+      const isHidden = localStorage.getItem('mainHidden') === 'true';
+      main.style.display = isHidden ? 'none' : 'block';
+
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (main.style.display === 'none') {
+            main.style.display = 'block';
+            localStorage.setItem('mainHidden', 'false');
+          } else {
+            main.style.display = 'none';
+            localStorage.setItem('mainHidden', 'true');
+          }
+        });
+      }
+    }
+  </script>
+
+</body>
+</html>
