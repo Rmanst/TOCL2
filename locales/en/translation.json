@@ -1,0 +1,38 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "products": {
+            "title": "Products",
+            "meters": "Meters",
+            "portable": "Portable Products",
+            "sensors": "Sensors",
+            "memory": "Memory",
+            "powerBatteries": "Power Batteries",
+            "other": "Others"
+        },
+        "contact": "Contact",
+        "support": "Support"
+    },
+    "product": {
+        "addToCart": "Add to Cart",
+        "buyNow": "Buy Now",
+        "price": "USD {{price}}",
+        "quantity": "Quantity",
+        "stock": "Stock",
+        "description": "Description"
+    },
+    "cart": {
+        "title": "Shopping Cart",
+        "empty": "Your cart is empty",
+        "total": "Total",
+        "checkout": "Checkout",
+        "remove": "Remove"
+    },
+    "footer": {
+        "address": "Address",
+        "phone": "Phone",
+        "email": "Email",
+        "copyright": "Copyright"
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "nav": {
+        "home": "首頁",
+        "about": "關於我們",
+        "products": {
+            "title": "產品",
+            "meters": "計量表",
+            "portable": "手攜產品",
+            "sensors": "傳感器",
+            "memory": "記憶體",
+            "powerBatteries": "動力電池",
+            "other": "其他"
+        },
+        "contact": "聯絡我們",
+        "support": "客戶服務"
+    },
+    "product": {
+        "addToCart": "加入購物車",
+        "buyNow": "立即購買",
+        "price": "NT$ {{price}}",
+        "quantity": "數量",
+        "stock": "庫存",
+        "description": "商品描述"
+    },
+    "cart": {
+        "title": "購物車",
+        "empty": "購物車是空的",
+        "total": "總計",
+        "checkout": "結帳",
+        "remove": "移除"
+    },
+    "footer": {
+        "address": "地址",
+        "phone": "電話",
+        "email": "電子郵件",
+        "copyright": "版權所有"
+    }
+}
