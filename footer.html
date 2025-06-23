@@ -1,3 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transducer on Chip Limited</title>
+    <!-- 既有的 head 內容 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next/21.6.10/i18next.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/1.3.1/i18next-http-backend.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.3/i18next-browser-languagedetector.min.js"></script>
+    <script src="i18n.js"></script>
+    <script>
+      // 當頁面載入完成時初始化翻譯
+      document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+      });
+    </script>
+</head>
+<body>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -38,4 +58,16 @@
             </div>
         </div>
     </footer>
+
+    <script>
+      loadHTML("header", "header.html", function() {
+        initMainControl && initMainControl();
+        if (typeof updateContent === 'function') updateContent();
+      });
+      loadHTML("footer", "footer.html", function() {
+        if (typeof updateContent === 'function') updateContent();
+      });
+    </script>
+</body>
+</html>
 
