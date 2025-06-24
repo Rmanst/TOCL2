@@ -33,8 +33,9 @@ function updateContent() {
   document.querySelectorAll('.product-card').forEach(card => {
     const priceElement = card.querySelector('.price');
     if (priceElement) {
-      const price = priceElement.getAttribute('data-price');
-      priceElement.textContent = i18next.t('product.price', { price: price });
+      const price = priceElement.textContent.trim().replace(/[^\d]/g, '') || '0';
+priceElement.textContent = i18next.t('product.price', { price });
+
     }
     
     const addToCartBtn = card.querySelector('.btn--add-to-cart');
