@@ -11,41 +11,62 @@ i18next
       order: ['querystring', 'cookie', 'localStorage', 'navigator'],
       caches: ['localStorage', 'cookie']
     }
+  }, function(err, t) {
+    if (err) {
+      console.error('翻譯初始化失敗:', err);
+      return;
+    }
+    updateContent(); // 翻譯初始化成功後再執行
   });
 
 // 語言切換函數
 function changeLanguage(lng) {
   i18next.changeLanguage(lng, (err, t) => {
-    if (err) return console.log('Something went wrong loading', err);
+    if (err) {
+      console.log('語言切換錯誤:', err);
+      return;
+    }
     updateContent();
   });
 }
 
 // 更新頁面內容
 function updateContent() {
-  // 更新導航選單
+  // 導航與靜態標籤翻譯
   document.querySelectorAll('[data-i18n]').forEach(element => {
     const key = element.getAttribute('data-i18n');
-    element.textContent = i18next.t(key);
+    const translation = i18next.t(key);
+    if (translation && translation !== key) {
+      element.textContent = translation;
+    }
   });
-  
-  // 更新產品價格和按鈕
+
+  // 產品區域翻譯
   document.querySelectorAll('.product-card').forEach(card => {
+    // 處理價格
     const priceElement = card.querySelector('.price');
     if (priceElement) {
-      const price = priceElement.textContent.trim().replace(/[^\d]/g, '') || '0';
-priceElement.textContent = i18next.t('product.price', { price });
-
+      const rawPrice = priceElement.textContent.trim().replace(/[^\d]/g, '') || '0';
+      priceElement.textContent = i18next.t('product.price', { price: rawPrice });
     }
-    
+
+    // 按鈕：加入購物車
     const addToCartBtn = card.querySelector('.btn--add-to-cart');
     if (addToCartBtn) {
       addToCartBtn.textContent = i18next.t('product.addToCart');
     }
-    
+
+    // 按鈕：立即購買
     const buyNowBtn = card.querySelector('.btn--buy-now');
     if (buyNowBtn) {
       buyNowBtn.textContent = i18next.t('product.buyNow');
     }
   });
+
+  // 購物車頁面翻譯（若有使用）
+  const cartTitle = document.querySelector('.cart-title');
+  if (cartTitle) cartTitle.textContent = i18next.t('cart.title');
+
+  const checkoutBtn = document.querySelector('.btn--checkout');
+  if (checkoutBtn) checkoutBtn.textContent = i18next.t('cart.checkout');
 }
