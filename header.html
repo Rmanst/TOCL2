@@ -8,18 +8,17 @@
       <!-- 語言/連結 -->
       <div class="top-left">
         <nav class="top-nav">
-          <a href="#">中文</a> |
-          <a href="#">English</a> |
-          <span id="google_translate_element" style="display: inline-block; vertical-align: middle;"></span>
-          <br>
+          <a href="#" id="lang-zh">中文</a> |
+          <a href="#" id="lang-en">English</a> |
+          <a href="#" id="lang-auto">在地</a> |
+          <div id="google_translate_element" style="display:none;"></div><br>
           <a href="#">形象</a> |
           <a href="purchase.html">購買</a> |
           <a href="support.html">客訴</a> |<br>
           <a href="#">使用</a> |
           <a href="support.html">客訴</a> |<br>
           <a href="index.html">首頁</a> |
-          <a href="javascript:history.back()">前一頁</a> |
-          <a href="javascript:history.forward()">後一頁</a>
+          <a href="#">前一頁</a>
         </nav>
       </div>
 
@@ -110,9 +109,7 @@
       <!-- 行動與選單按鈕 -->
       <div class="nav-actions">
         <button class="btn btn--outline" onclick="location.href='purchase.html'">
-          <i class="fas fa-shopping-cart"></i>
-          <span class="cart-count">0</span>
-          購買
+          <i class="fas fa-shopping-cart"></i> &nbsp;購&nbsp;&nbsp;買
         </button>
         <button class="btn btn--primary" onclick="location.href='support.html'">
           <i class="fas fa-headset"></i>&nbsp;客戶服務
@@ -123,4 +120,51 @@
       </div>
     </div>
   </nav>
+
+  <!-- 語言切換腳本 -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'zh-TW,en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <script>
+    function changeLanguage(langCode) {
+      const select = document.querySelector('select.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      }
+    }
+
+    function detectAndSwitchLanguage() {
+      const browserLang = navigator.language || navigator.userLanguage;
+      const lang = browserLang.startsWith('zh') ? 'zh-TW' : 'en';
+      changeLanguage(lang);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.getElementById('lang-zh').addEventListener('click', function (e) {
+        e.preventDefault();
+        changeLanguage('zh-TW');
+      });
+
+      document.getElementById('lang-en').addEventListener('click', function (e) {
+        e.preventDefault();
+        changeLanguage('en');
+      });
+
+      document.getElementById('lang-auto').addEventListener('click', function (e) {
+        e.preventDefault();
+        detectAndSwitchLanguage();
+      });
+    });
+  </script>
+
 </header>
