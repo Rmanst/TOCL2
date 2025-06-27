@@ -1,138 +1,176 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>計量傳感器 - 專業測量解決方案</title>
-    <link rel="stylesheet" href="modified-style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>計量傳感器 - 專業測量解決方案</title>
+  <link rel="stylesheet" href="modified-style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
 <div id="header"></div>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Homepage / About Section -->
-            <!-- Hero Section -->
-            <div class="hero">
-                <div class="hero-background"></div>
-                <div class="container">
-                    <div class="hero-content">
-                        <h1 class="hero-title">APP的普及，帶來生活品質不斷提升</h1>
-                        <p class="hero-subtitle">我們專注於將物理世界的細微變化，轉化為精準、可靠的數位訊號，驅動您的創新應用</p>
-                        
-                        <!-- Process Flow Diagram -->
-                        <div class="process-flow">
-                            <div class="process-step">
-                                <div class="process-icon">
-                                    <i class="fas fa-bolt"></i>
-                                </div>
-                                <span>物理能量</span>
-                                <small>光、熱、引力、距離</small>
-                            </div>
-                            <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
-                            <div class="process-step">
-                                <div class="process-icon">
-                                    <i class="fas fa-microchip"></i>
-                                </div>
-                                <span>傳感器</span>
-                            </div>
-                            <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
-                            <div class="process-step">
-                                <div class="process-icon">
-                                    <i class="fas fa-exchange-alt"></i>
-                                </div>
-                                <span>信號轉換</span>
-                            </div>
-                            <div class="process-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
-                            <div class="process-step">
-                                <div class="process-icon">
-                                    <i class="fas fa-cogs"></i>
-                                </div>
-                                <span>資料處理</span>
-                            </div>
-                            <div class="process-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
-                            <div class="process-step">
-                                <div class="process-icon">
-                                    <i class="fas fa-wifi"></i>
-                                </div>
-                                <span>資料通訊</span>
-                            </div>
-                            <div class="process-arrow"><i class="fa-brands fa-bluetooth"></i></div>
-                            <div class="process-step">
-                                <div class="process-icon">
-                                    <i class="fas fa-mobile-alt"></i>
-                                </div>
-                                <span>手機APP</span>
-                                <small>處理、顯示</small>
-                            </div>
-                        </div>
-                        
-                        <div class="hero-actions">
-                            <button class="btn btn--primary btn--lg" onclick="location.href='product.html'">探索我們的產品</button>
-                            <button class="btn btn--secondary btn--lg" onclick="location.href='coretech.html'">了解技術核心</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </main>
+<!-- Main Content -->
+<main id="mainContent">
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-background"></div>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">APP的普及，帶來生活品質不斷提升</h1>
+        <p class="hero-subtitle">我們專注於將物理世界的細微變化，轉化為精準、可靠的數位訊號，驅動您的創新應用</p>
 
+        <!-- Process Flow Diagram -->
+        <div class="process-flow">
+          <div class="process-step">
+            <div class="process-icon"><i class="fas fa-bolt"></i></div>
+            <span>物理能量</span>
+            <small>光、熱、引力、距離</small>
+          </div>
+          <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="process-step">
+            <div class="process-icon"><i class="fas fa-microchip"></i></div>
+            <span>傳感器</span>
+          </div>
+          <div class="process-arrow"><i class="fas fa-arrow-right"></i></div>
+          <div class="process-step">
+            <div class="process-icon"><i class="fas fa-exchange-alt"></i></div>
+            <span>信號轉換</span>
+          </div>
+          <div class="process-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
+          <div class="process-step">
+            <div class="process-icon"><i class="fas fa-cogs"></i></div>
+            <span>資料處理</span>
+          </div>
+          <div class="process-arrow"><i class="fas fa-arrow-right-arrow-left"></i></div>
+          <div class="process-step">
+            <div class="process-icon"><i class="fas fa-wifi"></i></div>
+            <span>資料通訊</span>
+          </div>
+          <div class="process-arrow"><i class="fa-brands fa-bluetooth"></i></div>
+          <div class="process-step">
+            <div class="process-icon"><i class="fas fa-mobile-alt"></i></div>
+            <span>手機APP</span>
+            <small>處理、顯示</small>
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn btn--primary btn--lg" onclick="location.href='product.html'">探索我們的產品</button>
+          <button class="btn btn--secondary btn--lg" onclick="location.href='coretech.html'">了解技術核心</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
 
 <div id="footer"></div>
 
 <!-- Header/Footer 載入 -->
-  <script>
-    function loadHTML(id, url, callback) {
-      fetch(url).then(res => res.text()).then(html => {
-        document.getElementById(id).innerHTML = html;
-        if (typeof callback === 'function') callback();
+<script>
+  function loadHTML(id, url, callback) {
+    fetch(url).then(res => res.text()).then(html => {
+      document.getElementById(id).innerHTML = html;
+      if (typeof callback === 'function') callback();
+    });
+  }
+
+  // 載入 header 並執行翻譯
+  loadHTML("header", "header.html", function () {
+    initMainControl && initMainControl();
+    if (typeof updateContent === 'function') updateContent();
+  });
+
+  // 載入 footer 並執行翻譯
+  loadHTML("footer", "footer.html", function () {
+    if (typeof updateContent === 'function') updateContent();
+  });
+
+  function initMainControl() {
+    const main = document.getElementById('mainContent');
+    const logo = document.getElementById('logoLink');
+    if (!main) return;
+
+    const isHidden = localStorage.getItem('mainHidden') === 'true';
+    main.style.display = isHidden ? 'none' : 'block';
+
+    if (logo) {
+      logo.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (main.style.display === 'none') {
+          main.style.display = 'block';
+          localStorage.setItem('mainHidden', 'false');
+        } else {
+          main.style.display = 'none';
+          localStorage.setItem('mainHidden', 'true');
+        }
       });
     }
+  }
+</script>
 
-    // 載入 header 並執行 main 顯示控制邏輯
-    loadHTML("header", "header.html", initMainControl);
-    loadHTML("footer", "footer.html");
-
-    function initMainControl() {
-      const main = document.getElementById('mainContent');
-      const logo = document.getElementById('logoLink');
-      if (!main) return;
-
-      const isHidden = localStorage.getItem('mainHidden') === 'true';
-      main.style.display = isHidden ? 'none' : 'block';
-
-      if (logo) {
-        logo.addEventListener('click', function (e) {
-          e.preventDefault();
-          if (main.style.display === 'none') {
-            main.style.display = 'block';
-            localStorage.setItem('mainHidden', 'false');
-          } else {
-            main.style.display = 'none';
-            localStorage.setItem('mainHidden', 'true');
-          }
-        });
+<!-- 語言切換相關 -->
+<script>
+  function changeLanguage(langCode) {
+    const tryChange = () => {
+      const select = document.querySelector('select.goog-te-combo');
+      if (select) {
+        select.value = langCode;
+        select.dispatchEvent(new Event('change'));
+      } else {
+        setTimeout(tryChange, 200);
       }
+    };
+    tryChange();
+  }
+
+  function detectAndSwitchLanguage() {
+    const browserLang = navigator.language || navigator.userLanguage;
+    const lang = browserLang.startsWith('zh') ? 'zh-TW' : 'en';
+    changeLanguage(lang);
+  }
+
+  function bindLanguageButtons() {
+    const zhBtn = document.getElementById('lang-zh');
+    const enBtn = document.getElementById('lang-en');
+    const autoBtn = document.getElementById('lang-auto');
+
+    if (zhBtn && enBtn && autoBtn) {
+      zhBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        changeLanguage('zh-TW');
+      });
+
+      enBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        changeLanguage('en');
+      });
+
+      autoBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        detectAndSwitchLanguage();
+      });
     }
-  </script>
+  }
 
+  window.addEventListener('load', function () {
+    setTimeout(bindLanguageButtons, 1000);
+  });
+</script>
 
-<!-- 初始化 Google 翻譯元件的函式 -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'zh-TW',
-        includedLanguages: 'en,zh-TW,zh-CN,ja,ko',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-
-  <!-- 載入 Google 翻譯主程式 -->
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+<!-- Google 翻譯元件 -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'zh-TW',
+      includedLanguages: 'en,zh-TW,zh-CN,ja,ko',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
