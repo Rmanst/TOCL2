@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計量傳感器 - 專業測量解決方案</title>
+    <link rel="stylesheet" href="modified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+
+    <!-- Main Content -->
+    <main>
+        <div class="product-categories-selection">
+            <div class="page-header">
+                <div class="container">
+                    <h1>TOC-123 廚房料理藍牙電子秤</h1>
+                    <!--<p>高精度電子秤，適用於各種稱重需求</p>-->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="product-list">
+                    <div class="product-item featured" style="text-align: center;">
+                        <img src="images/TOC-123.jpg" alt="TOC-123 廚房料理藍牙電子秤圖片">
+                    </div>
+                    <div class="product-item featured">
+                              <h2>商品特色</h2>
+                              <ul>
+                                <li>精準量測食材重量</li>
+                                <li>容易清潔</li>
+                                <li>藍牙連線透過APP記錄食材重量、熱量以及營養成份</li>
+                              </ul>
+                              <p>
+                              <h2>規格介紹</h2>
+                              <ul>
+                                <li>尺寸：168 x 181.5 x 27mm</li>
+                                <li>重量：約 375g</li>
+                                <li>最大秤重：3000g</li>
+                                <li>最小單位：0.1g</li>
+                                <li>材質：食品接觸級鋼化玻璃</li>
+                                <li>電力來源：4 號電池 x 3</li>
+                                <li>單位切換：g／ml／oz／lb：oz</li>
+                              </ul>
+                              <p>
+                                <div class="product-price-stock">
+                                    <span class="price">NT$ 800</span>
+                                    <!--<span class="stock">庫存: 20</span>-->
+                                </div>
+                              <p>
+                                <div class="product-actions">
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                </div>
+
+
+                    </div>
+                </div>
+
+
+    </div>
+</main>
+
+<div id="footer"></div>
+
+<!-- Header/Footer 載入 -->
+  <script>
+    function loadHTML(id, url, callback) {
+      fetch(url).then(res => res.text()).then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === 'function') callback();
+      });
+    }
+
+    // 載入 header 並執行 main 顯示控制邏輯
+    loadHTML("header", "header.html", initMainControl);
+    loadHTML("footer", "footer.html");
+
+    function initMainControl() {
+      const main = document.getElementById('mainContent');
+      const logo = document.getElementById('logoLink');
+      if (!main) return;
+
+      const isHidden = localStorage.getItem('mainHidden') === 'true';
+      main.style.display = isHidden ? 'none' : 'block';
+
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (main.style.display === 'none') {
+            main.style.display = 'block';
+            localStorage.setItem('mainHidden', 'false');
+          } else {
+            main.style.display = 'none';
+            localStorage.setItem('mainHidden', 'true');
+          }
+        });
+      }
+    }
+  </script>
+
+<!-- 初始化 Google 翻譯元件的函式 -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'en,zh-TW,zh-CN,ja,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <!-- 載入 Google 翻譯主程式 -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+<script src="cart.js"></script>
+</body>
+</html>
