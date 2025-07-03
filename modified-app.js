@@ -647,7 +647,7 @@ function getCategoryData(categoryId) {
         'meters': {
             name: '計量表 (Meters)',
             products: [
-                { id: 'scale', name: '秤', description: '高精度電子秤，適用於各種稱重需求', specs: ['精度±0.1g', '最大載重5kg'] },
+                { id: 'scale', name: '電子秤', description: '高精度電子秤，適用於各種稱重需求', specs: ['精度±0.01g', '最大載重5kg'] },
                 { id: 'multimeter', name: '三用電表', description: '測量電壓、電流、電阻的多功能儀表', specs: ['DC/AC測量', '自動量程'] },
                 { id: 'battery-tester', name: '電池表', description: '精確檢測電池電量和健康狀況', specs: ['支援多種電池', '數位顯示'] },
                 { id: 'power-meter', name: '電能表', description: '智能電力計量，支持遠程監控', specs: ['智能監控', '遠程讀取'] },
@@ -655,11 +655,11 @@ function getCategoryData(categoryId) {
                 { id: 'gas-meter', name: '流氣表', description: '高精度氣體流量測量解決方案', specs: ['氣體測量', '高精度'] },
                 { id: 'thermometer-ear', name: '耳溫槍', description: '快速準確的體溫測量設備', specs: ['1秒測溫', '醫療級'] },
                 { id: 'blood-pressure', name: '血壓計', description: '專業級血壓監測設備', specs: ['全自動', '記憶功能'] },
-                { id: 'glucose-meter', name: '血糖計', description: '精確的血糖檢測儀器', specs: ['快速檢測', '小血量'] }
+                { id: 'glucose-meter', name: '血醣計', description: '精確的血醣檢測儀器', specs: ['快速檢測', '小血量'] }
             ]
         },
         'portable': {
-            name: '手攜產品 (Portable Products)',
+            name: '單節鋰電池及<br>小容量電池包',
             products: [
                 { id: 'battery-15v', name: '1.5V電池', description: 'C、D、AA、N、AAA、AAAA型號電池，長效耐用', specs: ['多種型號', '長效電力'] },
                 { id: 'lithium-battery', name: '鋰電池', description: '高能量密度，適用於各種便攜設備', specs: ['高能量密度', '可充電'] },
@@ -667,27 +667,27 @@ function getCategoryData(categoryId) {
             ]
         },
         'sensors': {
-            name: '傳感器 (Sensors)',
+            name: '數字傳感器',
             products: [
                 { id: 'contact-thermometer', name: '接觸式溫度計', description: '高精度接觸式溫度傳感器，適用於各種工業和科研應用', specs: ['高精度', '工業級'] },
                 { id: 'infrared-probe', name: '紅外線測溫頭', description: '非接觸式紅外線溫度感應器，安全便捷的測溫解決方案', specs: ['非接觸', '快速響應'] }
             ]
         },
         'memory': {
-            name: '記憶體 (Memory)',
+            name: 'EEPROM',
             products: [
                 { id: 'eeprom', name: 'EEPROM', description: '電子抹除式可程式唯讀記憶體，提供可靠的非揮發性數據存儲', specs: ['非揮發性', '可程式'] }
             ]
         },
         'batteries': {
-            name: '動力電池 (Power Batteries)',
+            name: '動力電池',
             products: [
                 { id: 'high-energy-battery', name: '高能量密度電池組', description: '先進鋰離子技術，提供卓越的能量密度和續航表現', specs: ['高能量密度', '長續航'] },
                 { id: 'high-power-battery', name: '高功率輸出電池組', description: '專為高功率應用設計，提供強勁的瞬間功率輸出', specs: ['高功率輸出', '快充支援'] }
             ]
         },
         'Other': {
-            name: '其他 (Other)',
+            name: '其他',
             products: [
                 { id: 'Other-1', name: '其他1', description: '先進其他技術，提供卓越的能量密度和續航表現', specs: ['其他', '其他'] },
                 { id: 'Other-2', name: '其他2', description: '專為高功率應用設計，提供強勁的瞬間功率輸出', specs: ['其他', '其他'] }
@@ -701,10 +701,10 @@ function getCategoryData(categoryId) {
 // 獲取分類名稱
 function getCategoryName(categoryId) {
     const names = {
-        'meters': '計量表',
-        'portable': '手攜產品',
-        'sensors': '傳感器',
-        'memory': '記憶體',
+        'meters': '計量產品',
+        'portable': '單節鋰電池及<br>小容量電池包',
+        'sensors': '數字傳感器',
+        'memory': 'eeprom',
         'batteries': '動力電池',
         'other': '其他'
     };
