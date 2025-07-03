@@ -645,32 +645,32 @@ function createCategoryProducts(categoryId) {
 function getCategoryData(categoryId) {
     const categories = {
         'meters': {
-            name: '計量表 (Meters)',
+            name: '計量表',
             products: [
-                { id: 'scale', name: '電子秤', description: '高精度電子秤，適用於各種稱重需求', specs: ['精度±0.01g', '最大載重5kg'] },
+                { id: 'scale', name: '電子秤', description: '高精度電子秤，適用於計價秤及珠寶秤', specs: ['精度±0.01g', '最大載重5kg'] },
                 { id: 'multimeter', name: '三用電表', description: '測量電壓、電流、電阻的多功能儀表', specs: ['DC/AC測量', '自動量程'] },
-                { id: 'battery-tester', name: '電池表', description: '精確檢測電池電量和健康狀況', specs: ['支援多種電池', '數位顯示'] },
+                { id: 'battery-tester', name: '電池內阻表', description: '精確檢測電池內阻及評估健康度', specs: ['支援多種電池', '數位顯示'] },
                 { id: 'power-meter', name: '電能表', description: '智能電力計量，支持遠程監控', specs: ['智能監控', '遠程讀取'] },
-                { id: 'flow-meter', name: '流體表', description: '精確測量液體流量，工業級可靠性', specs: ['工業級', '高精度'] },
+                { id: 'flow-meter', name: '流體表', description: '精確測量液體流量解決方案', specs: ['工業級', '高精度'] },
                 { id: 'gas-meter', name: '流氣表', description: '高精度氣體流量測量解決方案', specs: ['氣體測量', '高精度'] },
-                { id: 'thermometer-ear', name: '耳溫槍', description: '快速準確的體溫測量設備', specs: ['1秒測溫', '醫療級'] },
-                { id: 'blood-pressure', name: '血壓計', description: '專業級血壓監測設備', specs: ['全自動', '記憶功能'] },
-                { id: 'glucose-meter', name: '血醣計', description: '精確的血醣檢測儀器', specs: ['快速檢測', '小血量'] }
+                { id: 'thermometer-ear', name: '耳溫槍', description: '快速準確的體溫測量', specs: ['1秒測溫', '醫療級'] },
+                { id: 'blood-pressure', name: '血壓計', description: '專業級血壓監測', specs: ['全自動', '記憶功能'] },
+                { id: 'glucose-meter', name: '血醣計', description: '精確的血醣檢測', specs: ['快速檢測', '小血量'] }
             ]
         },
         'portable': {
             name: '單節鋰電池及<br>小容量電池包',
             products: [
                 { id: 'battery-15v', name: '1.5V電池', description: 'C、D、AA、N、AAA、AAAA型號電池，長效耐用', specs: ['多種型號', '長效電力'] },
-                { id: 'lithium-battery', name: '鋰電池', description: '高能量密度，適用於各種便攜設備', specs: ['高能量密度', '可充電'] },
-                { id: 'power-box', name: '電源盒', description: '便攜式電源管理解決方案', specs: ['便攜式', '多接口'] }
+                { id: 'lithium-battery', name: '鋰電池電源方案', description: '可整合於各種便攜設備，提供USB充放電及鋰電池保護', specs: ['高能量密度', '可充電'] },
+                { id: 'power-box', name: '電池包', description: '提供SAmPG1(100~500mAh)、SAmPG2(10~50mAh)、SPG(1Ah~3Ah)等不同容量的鋰電池電源管理方案', specs: ['便攜式', '多接口'] }
             ]
         },
         'sensors': {
             name: '數字傳感器',
             products: [
-                { id: 'contact-thermometer', name: '接觸式溫度計', description: '高精度接觸式溫度傳感器，適用於各種工業和科研應用', specs: ['高精度', '工業級'] },
-                { id: 'infrared-probe', name: '紅外線測溫頭', description: '非接觸式紅外線溫度感應器，安全便捷的測溫解決方案', specs: ['非接觸', '快速響應'] }
+                { id: 'contact-thermometer', name: '接觸式溫度計', description: '高精度接觸式溫度傳感器，適用於冷氣、冰箱及紅酒櫃等溫控設備', specs: ['高精度', '工業級'] },
+                { id: 'infrared-probe', name: '紅外線測溫頭', description: '非接觸式紅外線溫度數字傳感器，可直接讀取數字資料', specs: ['非接觸', '快速響應'] }
             ]
         },
         'memory': {
