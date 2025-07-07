@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計量傳感器 - 專業測量解決方案</title>
+    <link rel="stylesheet" href="modified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="product-categories-selection">
+            <div class="page-header">
+                <div class="container">
+                    <h1>TOC-888 無線靜音滑鼠</h1>
+                    <!--<p>高精度電子秤，適用於各種稱重需求</p>-->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="product-list">
+                    <div class="product-item featured" style="text-align: center;">
+                        <img src="images/TOC-888.jpg" alt="TOC-888 無線靜音滑鼠">
+                    </div>
+                    <div class="product-item featured">
+                              <h2>產品特色</h2>
+                              <ul>
+                                <li>配備耐用靜音點擊按鈕，兼具出色省電效益</li>
+                                <li>滑鼠前端內建彈性攜帶環</li>
+                                <li>DPI 高達 4200，可在任何表面（包括玻璃）進行追蹤</li>
+                                <li>100% PTFE 滑鼠腳墊</li>
+                                <li>1000 萬次點擊壽命</li>   
+                                <li>支援 RF 2.4 GHz (使用隨附 USB 接收器) 和藍芽連線模式</li>   
+                                <li>最多可連接三台不同裝置</li>   
+                                <li>Armoury Crate 內建可自訂功能</li>   
+                              </ul>
+                              <p>
+                              <h2>規格介紹</h2>
+                              <ul>
+                                <li>連線：無線連接, RF 2.4GHz, Bluetooth</li>
+                                <li>射頻距離：10m</li>
+                                <li>追蹤：光學追蹤</li>
+                                <li>作業系統：Windows® 10、Windows® 11</li>
+                                <li>尺寸：114.5 x 71 x 42.3 mm</li>
+                                <li>重量：85g</li>
+                                <li>解析度：4200dpi</li>
+                                <li>電池續航力：最高 12 個月</li>
+                                <li>按鈕：6 programmable buttons</li>
+                                <li>軟體：Armoury Crate</li>
+                                <li>包裝盒內容：滑鼠、接收器、電池、快速入門指南、保固手冊</li>
+                                <li>備註說明：Battery life may vary based on user habits and computing conditions
+                                <br>Mouse NCC Certificate: CCAH22LP4870T5
+                                <br>Dongle NCC Certificate: CCAH22LP4860T2</li>
+                              </ul>
+                              <p>
+                                <div class="product-price-stock">
+                                    <span class="price">NT$ 1,590</span>
+                                    <!--<span class="stock">庫存: 20</span>-->
+                                </div>
+                              <p>
+                                <div class="product-actions">
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                </div>
+
+
+                    </div>
+                </div>
+
+
+    </div>
+</main>
+      
+<div id="footer"></div>
+
+<!-- Header/Footer 載入 -->
+  <script>
+    function loadHTML(id, url, callback) {
+      fetch(url).then(res => res.text()).then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === 'function') callback();
+      });
+    }
+
+    // 載入 header 並執行 main 顯示控制邏輯
+    loadHTML("header", "header.html", initMainControl);
+    loadHTML("footer", "footer.html");
+
+    function initMainControl() {
+      const main = document.getElementById('mainContent');
+      const logo = document.getElementById('logoLink');
+      if (!main) return;
+
+      const isHidden = localStorage.getItem('mainHidden') === 'true';
+      main.style.display = isHidden ? 'none' : 'block';
+
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (main.style.display === 'none') {
+            main.style.display = 'block';
+            localStorage.setItem('mainHidden', 'false');
+          } else {
+            main.style.display = 'none';
+            localStorage.setItem('mainHidden', 'true');
+          }
+        });
+      }
+    }
+  </script>
+
+<!-- 初始化 Google 翻譯元件的函式 -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'en,zh-TW,zh-CN,ja,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <!-- 載入 Google 翻譯主程式 -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>

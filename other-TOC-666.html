@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計量傳感器 - 專業測量解決方案</title>
+    <link rel="stylesheet" href="modified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="product-categories-selection">
+            <div class="page-header">
+                <div class="container">
+                    <h1>TOC-666 指環翻頁控制器</h1>
+                    <!--<p>高精度電子秤，適用於各種稱重需求</p>-->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="product-list">
+                    <div class="product-item featured" style="text-align: center;">
+                        <img src="images/TOC-666.jpg" alt="TOC-666 指環翻頁控制器">
+                    </div>
+                    <div class="product-item featured">
+                              <h2>產品特色</h2>
+                              <ul>
+                                <li>使用藍芽連接，iOS和安卓系統都可以使用，可開啓調節模式，像滑鼠那樣使用</li>
+                                <li>預設可直接兼容抖音，雙擊點讚，翻頁操作都可以隔空操作</li>
+                                <li>10米遠程長距離操作，讓你能隨心遙控使用，無需拿著手機趴趴走</li>
+                                <li>支持各大主流APP，無論是刷動態、拍照還是看電子書，都能得心應手</li>
+                                <li>全新升級多加三個按鍵，讓操作更便捷，提升使用效率</li>
+                                <li>Type-C 接口充電款 ，充電使用更方便</li> 
+                              </ul>
+                              <p>
+                              <h2>規格介紹</h2>
+                              <ul>
+                                <li>電池容量：50mAh</li>
+                                <li>藍牙版本：V5.3藍牙芯片</li>
+                                <li>使用時長：持續使用約72h</li>
+                                <li>產品顔色：黑色、白色、粉色</li>
+                                <li>產品功能：自拍、點讚、上下左右翻頁、音量加減</li>
+                                <li>商品内容：指環遙控器 x1、使用説明書 x1、充電線 x1</li>
+                              </ul>
+                              <p>
+                                <div class="product-price-stock">
+                                    <span class="price">NT$ 399</span>
+                                    <!--<span class="stock">庫存: 20</span>-->
+                                </div>
+                              <p>
+                                <div class="product-actions">
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                </div>
+
+
+                    </div>
+                </div>
+
+
+    </div>
+</main>
+      
+<div id="footer"></div>
+
+<!-- Header/Footer 載入 -->
+  <script>
+    function loadHTML(id, url, callback) {
+      fetch(url).then(res => res.text()).then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === 'function') callback();
+      });
+    }
+
+    // 載入 header 並執行 main 顯示控制邏輯
+    loadHTML("header", "header.html", initMainControl);
+    loadHTML("footer", "footer.html");
+
+    function initMainControl() {
+      const main = document.getElementById('mainContent');
+      const logo = document.getElementById('logoLink');
+      if (!main) return;
+
+      const isHidden = localStorage.getItem('mainHidden') === 'true';
+      main.style.display = isHidden ? 'none' : 'block';
+
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (main.style.display === 'none') {
+            main.style.display = 'block';
+            localStorage.setItem('mainHidden', 'false');
+          } else {
+            main.style.display = 'none';
+            localStorage.setItem('mainHidden', 'true');
+          }
+        });
+      }
+    }
+  </script>
+
+<!-- 初始化 Google 翻譯元件的函式 -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'en,zh-TW,zh-CN,ja,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <!-- 載入 Google 翻譯主程式 -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計量傳感器 - 專業測量解決方案</title>
+    <link rel="stylesheet" href="modified-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div id="header"></div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="product-categories-selection">
+            <div class="page-header">
+                <div class="container">
+                    <h1>TOC-360 Bluetooth Gateway</h1>
+                    <!--<p>高精度電子秤，適用於各種稱重需求</p>-->
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="product-list">
+                    <div class="product-item featured" style="text-align: center;">
+                        <img src="images/TOC-360.jpg" alt="TOC-360 Bluetooth Gateway">
+                    </div>
+                    <div class="product-item featured">
+                              <h2>產品特色</h2>
+                              <ul>
+                                <li>多功能網關 2S 可連接並管理各種智慧裝置，傳達指示和排程，在日常生活中實現各種智慧場景。它支援三種主流通訊協定：藍牙，藍牙網狀網路與 ZigBee，能簡化您的智慧生活</li>
+                                <li>有線網路連接埠，傳輸穩定且有效率 。支援 RJ45 纜線。為遠端控制與裝置連線提供更穩定、更有效率的資料傳輸</li>
+                                <li>具雙核心 CPU 和高容量記憶體，反應快速</li>
+                                <li>Type-C 連接埠</li> 
+                                <li>大容量記憶體：128MB</li> 
+                              </ul>
+                              <p>
+                              <h2>規格介紹</h2>
+                              <ul>
+                                <li>產品尺寸：95 x 95 x 26mm</li>
+                                <li>輸入參數：5V⎓1A</li>
+                                <li>運作溫度：-10°C 至 50°C</li>
+                                <li>運作濕度：0%-95%RH (非冷凝)</li>
+                                <li>網路連接埠：10/100Mbps 乙太網路</li>
+                                <li>相容於：Android 5.0 或 iOS 12.0 及以上版本</li>
+                                <li>實施的標準：GB/T 4943.1-2011</li>
+                                <li>無線連線：Wi-Fi IEEE 802.11 a/b/g/n 2.4GHz/5GHz、Zigbee 3.0 IEEE 802.15.4、藍牙 5.0</li>
+                                <li>實施的標準：GB/T 4943.1-2011</li>
+                              </ul>
+                              <p>
+                                <div class="product-price-stock">
+                                    <span class="price">NT$ 895</span>
+                                    <!--<span class="stock">庫存: 20</span>-->
+                                </div>
+                              <p>
+                                <div class="product-actions">
+                                    <input type="number" class="form-control quantity-input" value="1" min="1">
+                                    <button class="btn btn--primary btn--add-to-cart">加入購物車</button>
+                                    <button class="btn btn--outline btn--buy-now">立即購買</button>
+                                </div>
+
+
+                    </div>
+                </div>
+
+
+    </div>
+</main>
+      
+<div id="footer"></div>
+
+<!-- Header/Footer 載入 -->
+  <script>
+    function loadHTML(id, url, callback) {
+      fetch(url).then(res => res.text()).then(html => {
+        document.getElementById(id).innerHTML = html;
+        if (typeof callback === 'function') callback();
+      });
+    }
+
+    // 載入 header 並執行 main 顯示控制邏輯
+    loadHTML("header", "header.html", initMainControl);
+    loadHTML("footer", "footer.html");
+
+    function initMainControl() {
+      const main = document.getElementById('mainContent');
+      const logo = document.getElementById('logoLink');
+      if (!main) return;
+
+      const isHidden = localStorage.getItem('mainHidden') === 'true';
+      main.style.display = isHidden ? 'none' : 'block';
+
+      if (logo) {
+        logo.addEventListener('click', function (e) {
+          e.preventDefault();
+          if (main.style.display === 'none') {
+            main.style.display = 'block';
+            localStorage.setItem('mainHidden', 'false');
+          } else {
+            main.style.display = 'none';
+            localStorage.setItem('mainHidden', 'true');
+          }
+        });
+      }
+    }
+  </script>
+
+<!-- 初始化 Google 翻譯元件的函式 -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'en,zh-TW,zh-CN,ja,ko',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+
+  <!-- 載入 Google 翻譯主程式 -->
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
+</body>
+</html>
